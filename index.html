@@ -454,6 +454,101 @@ body.sla-exit .wrap-inner > *:nth-child(n+7){transition-delay:0.24s}
 #brand-glow-ring.sla-rays-boost .glow-core{transition:opacity 0.35s var(--ease),transform 0.35s var(--ease),filter 0.35s var(--ease);opacity:1;transform:scale(1.35);filter:blur(1.2px) brightness(1.4)}
 @media (prefers-reduced-motion:reduce){#brand-glow-ring.sla-rays-boost .glow-ray,#brand-glow-ring.sla-rays-boost .glow-core{transition:none}}
 </style>
+<style id="uz-hdr">
+/* ===== перенесено из шапки Invent Bot (без «саги»): стеклянная кромка/пузырь, капли, свечение названия ===== */
+.brand-mark .mark-letter{position:relative;z-index:2;transition:opacity 0.4s var(--ease)}
+@keyframes markSheenActiveWide{0%{transform:translate(-45%,-30%) rotate(6deg) scale(0.9);opacity:0}22%{transform:translate(10%,-8%) rotate(18deg) scale(1.05);opacity:0.75}50%{transform:translate(35%,15%) rotate(-8deg) scale(1.15);opacity:0.9}78%{transform:translate(5%,25%) rotate(10deg) scale(1.02);opacity:0.5}100%{transform:translate(-30%,-10%) rotate(8deg) scale(1);opacity:0}}
+@keyframes markSheenActiveLine{0%{transform:translateX(-55%) rotate(6deg) translateY(-8%);opacity:0}24%{transform:translateX(20%) rotate(24deg) translateY(6%);opacity:0.95}52%{transform:translateX(90%) rotate(-10deg) translateY(-4%);opacity:0.8}100%{transform:translateX(160%) rotate(14deg) translateY(4%);opacity:0}}
+.brand-text{display:flex;flex-direction:column;gap:2px;transition:transform 0.6s var(--spring),opacity 0.5s var(--ease)}
+.brand-name{position:relative;font-weight:900;font-size:20px;letter-spacing:-0.035em;color:#F3EAFF;text-shadow:0 0 1px rgba(255,255,255,0.4);-webkit-text-stroke:0.5px rgba(200,60,130,0.55);filter:drop-shadow(0.6px 0 0 rgba(157,77,255,0.7)) drop-shadow(-0.6px 0 0 rgba(255,60,60,0.55)) drop-shadow(0 2px 10px rgba(157,77,255,0.4)) drop-shadow(0 0 0px rgba(157,77,255,0));animation:brandNameGlow 3.4s ease-in-out infinite;transition:transform 0.4s var(--ease);white-space:nowrap}
+@keyframes brandNameGlow{0%,100%{filter:drop-shadow(0.6px 0 0 rgba(157,77,255,0.7)) drop-shadow(-0.6px 0 0 rgba(255,60,60,0.55)) drop-shadow(0 2px 10px rgba(157,77,255,0.4)) drop-shadow(0 0 0px rgba(157,77,255,0))}50%{filter:drop-shadow(0.8px 0 0 rgba(157,77,255,0.85)) drop-shadow(-0.8px 0 0 rgba(255,70,70,0.7)) drop-shadow(0 2px 14px rgba(157,77,255,0.65)) drop-shadow(0 0 16px rgba(200,140,255,0.55))}}
+.brand-name .letter-fx{color:inherit}
+.brand-drip-wrap{position:relative;display:inline-block}
+.brand-drip{position:fixed;top:var(--drip-start-y,60px);left:var(--drip-start-x,40px);width:7px;height:7px;margin-left:-3.5px;border-radius:50% 50% 50% 50% / 58% 58% 42% 42%;background:radial-gradient(circle at 35% 28%,#F0E0FF,var(--purple-light) 52%,#5A00C4 100%);box-shadow:0 0 11px rgba(157,77,255,0.7),0 0 24px rgba(157,77,255,0.32);opacity:0;pointer-events:none;z-index:60;animation:dripFallFull var(--drip-dur,5.2s) linear infinite;will-change:transform,opacity,border-radius}
+.brand-drip::before{content:'';position:absolute;left:50%;bottom:100%;width:2.5px;height:26px;margin-left:-1.25px;border-radius:2px;background:linear-gradient(180deg,rgba(157,77,255,0),rgba(157,77,255,0.6) 55%,rgba(224,190,255,0.75));opacity:0;transform-origin:bottom center;animation:dripTrail var(--drip-dur,5.2s) linear infinite}
+.brand-drip.d1{--drip-dur:5.3s;animation-delay:0s}
+.brand-drip.d1::before{animation-delay:0s}
+.brand-drip.d2{--drip-dur:6.4s;animation-delay:0.9s;left:calc(var(--drip-start-x,40px) + 18px)}
+.brand-drip.d2::before{animation-delay:0.9s}
+.brand-drip.d3{--drip-dur:5.7s;animation-delay:1.9s;left:calc(var(--drip-start-x,40px) - 14px)}
+.brand-drip.d3::before{animation-delay:1.9s}
+.brand-drip.d4{--drip-dur:7.1s;animation-delay:2.9s;left:calc(var(--drip-start-x,40px) + 34px)}
+.brand-drip.d4::before{animation-delay:2.9s}
+.brand-drip.d5{--drip-dur:6.0s;animation-delay:3.9s;left:calc(var(--drip-start-x,40px) - 28px)}
+.brand-drip.d5::before{animation-delay:3.9s}
+@keyframes dripFallFull{0%{transform:translateY(0) scale(0.7,0.85);opacity:0;border-radius:50% 50% 50% 50% / 58% 58% 42% 42%;animation-timing-function:ease-out}5%{opacity:1;transform:translateY(0px) scale(0.88,0.95);border-radius:50% 50% 50% 50% / 58% 58% 42% 42%;animation-timing-function:ease-in-out}20%{opacity:1;transform:translateY(5px) scale(0.58,2.05);border-radius:44% 44% 50% 50% / 72% 72% 28% 28%;animation-timing-function:cubic-bezier(0.7,0,0.84,0)}23%{opacity:1;transform:translateY(12px) scale(0.96,0.88);border-radius:50% 50% 50% 56% / 62% 62% 38% 38%;animation-timing-function:ease-in}26%{opacity:1;transform:translateY(20px) scale(1.08,0.9);border-radius:50% 50% 50% 56% / 60% 60% 40% 40%;animation-timing-function:cubic-bezier(0.5,0,0.7,0.15)}62%{opacity:0.98;transform:translateY(calc((100vh - var(--drip-start-y,60px)) * 0.6)) scale(0.94,1.15);animation-timing-function:cubic-bezier(0.55,0,0.7,0.12)}88%{transform:translateY(calc(100vh - var(--drip-start-y,60px) - 40px)) scale(0.98,1.35);opacity:0.94;animation-timing-function:ease-out;border-radius:50% 50% 50% 50% / 65% 65% 35% 35%}94%{transform:translateY(calc(100vh - var(--drip-start-y,60px) - 8px)) scale(1.75,0.35);opacity:0.6;border-radius:50% 50% 50% 50% / 85% 85% 15% 15%}100%{transform:translateY(calc(100vh - var(--drip-start-y,60px))) scale(0.15,0.06);opacity:0}}
+@keyframes dripTrail{0%{opacity:0;height:3px}5%{opacity:0.4;height:5px}20%{opacity:0.95;height:24px}23%{opacity:0.25;height:9px}55%{opacity:0.78;height:34px}88%{opacity:0.4;height:20px}94%,100%{opacity:0;height:7px}}
+.brand-drip::after{content:'';position:fixed;top:var(--drip-start-y,60px);left:var(--drip-start-x,40px);width:3px;height:3px;margin-left:-1.5px;border-radius:50%;background:#F0E0FF;opacity:0;pointer-events:none;box-shadow:0 0 7px 1px rgba(200,140,255,0.95),6px -2px 3px 0px rgba(228,201,255,0.85),-6px -1px 3px 0px rgba(228,201,255,0.85),3px -6px 2.5px 0px rgba(228,201,255,0.65),-4px -5px 2.5px 0px rgba(228,201,255,0.65),1px 4px 2px 0px rgba(228,201,255,0.5);animation:dripSplash var(--drip-dur,5.2s) linear infinite}
+.brand-drip.d1::after{animation-delay:0s}
+.brand-drip.d2::after{animation-delay:0.9s;left:calc(var(--drip-start-x,40px) + 18px)}
+.brand-drip.d3::after{animation-delay:1.9s;left:calc(var(--drip-start-x,40px) - 14px)}
+.brand-drip.d4::after{animation-delay:2.9s;left:calc(var(--drip-start-x,40px) + 34px)}
+.brand-drip.d5::after{animation-delay:3.9s;left:calc(var(--drip-start-x,40px) - 28px)}
+@keyframes dripSplash{0%,91%{opacity:0;transform:translateY(0) scale(0.3)}93%{opacity:1;transform:translateY(calc(100vh - var(--drip-start-y,60px) - 8px)) scale(1.15)}97%{opacity:0.65;transform:translateY(calc(100vh - var(--drip-start-y,60px) - 4px)) scale(2.3)}100%{opacity:0;transform:translateY(calc(100vh - var(--drip-start-y,60px))) scale(3.1)}}
+@media (prefers-reduced-motion:reduce){.brand-drip,.brand-drip::before,.brand-drip::after{animation:none;display:none}}
+@media (max-width:480px){.brand-drip.d4,.brand-drip.d5{display:none}}
+html.is-android .brand-drip.d4,html.is-android .brand-drip.d5{display:none}
+.brand-sub{font-size:10.5px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.17em;font-weight:800;background:linear-gradient(90deg,var(--text-muted),var(--text-main));-webkit-background-clip:text;-webkit-text-fill-color:transparent;transition:color 0.5s var(--ease),transform 0.4s var(--ease);white-space:nowrap}
+.glass-bubble{position:relative}
+.glass-bubble::before{content:'';position:absolute;inset:-1.5px;border-radius:inherit;padding:1.5px;pointer-events:none;z-index:5;background:conic-gradient(from 0deg,rgba(255,110,180,0.75),rgba(255,210,120,0.7),rgba(140,255,210,0.7),rgba(120,190,255,0.75),rgba(190,140,255,0.75),rgba(255,110,180,0.75));background-size:220% 220%;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0.7;filter:blur(0.3px) saturate(160%) drop-shadow(0.4px 0 0 rgba(255,70,80,0.35)) drop-shadow(-0.4px 0 0 rgba(70,140,255,0.35));animation:bubbleHueBubble 10s linear infinite,bubbleDrift 6.5s ease-in-out infinite;will-change:filter,background-position}
+.glass-bubble::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:6;background:radial-gradient(120% 90% at 22% 12%,rgba(255,255,255,0.55),transparent 42%),radial-gradient(70% 60% at 85% 88%,rgba(120,60,255,0.25),transparent 60%);mix-blend-mode:screen;opacity:0.85;animation:bubbleBreathe 4.2s ease-in-out infinite;will-change:opacity,transform}
+@keyframes bubbleHueBubble{0%{filter:blur(0.3px) saturate(160%) hue-rotate(0deg) drop-shadow(0.4px 0 0 rgba(255,70,80,0.35)) drop-shadow(-0.4px 0 0 rgba(70,140,255,0.35))}100%{filter:blur(0.3px) saturate(160%) hue-rotate(360deg) drop-shadow(0.4px 0 0 rgba(255,70,80,0.35)) drop-shadow(-0.4px 0 0 rgba(70,140,255,0.35))}}
+@keyframes bubbleHueEdge{0%{filter:saturate(160%) hue-rotate(0deg) drop-shadow(0.4px 0 0 rgba(255,70,80,0.3)) drop-shadow(-0.4px 0 0 rgba(70,140,255,0.3))}100%{filter:saturate(160%) hue-rotate(360deg) drop-shadow(0.4px 0 0 rgba(255,70,80,0.3)) drop-shadow(-0.4px 0 0 rgba(70,140,255,0.3))}}
+@keyframes bubbleDrift{0%{background-position:0% 50%}33%{background-position:70% 30%}66%{background-position:30% 80%}100%{background-position:0% 50%}}
+@keyframes bubbleBreathe{0%,100%{opacity:0.85;transform:scale(1)}50%{opacity:0.62;transform:scale(1.008)}}
+@media (prefers-reduced-motion:reduce){.glass-bubble::before,.glass-bubble::after{animation:none}}
+@media (max-width:480px){.glass-bubble::before{filter:none;opacity:0.48}}
+@media (pointer:coarse){.glass-bubble::before{display:none}
+  .glass-bubble{box-shadow:inset 0 0 0 1px rgba(255,255,255,0.14)}}
+.glass-bubble--glow::before{inset:-1.5px;padding:2px;opacity:0.85;filter:blur(0.2px) saturate(190%) brightness(1.15)}
+.glass-edge{position:relative;box-shadow:0 0 calc(var(--neon-near,0) * 26px) rgba(157,77,255,calc(var(--neon-near,0) * 0.4));transition:box-shadow 0.25s var(--ease)}
+.glass-edge::before{content:'';position:absolute;inset:-1.5px;border-radius:inherit;padding:1.5px;pointer-events:none;z-index:5;background:conic-gradient(from 0deg,rgba(255,110,180,0.7),rgba(255,210,120,0.65),rgba(140,255,210,0.65),rgba(120,190,255,0.7),rgba(190,140,255,0.7),rgba(255,110,180,0.7));background-size:220% 220%;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0.65;filter:saturate(160%) drop-shadow(0.4px 0 0 rgba(255,70,80,0.3)) drop-shadow(-0.4px 0 0 rgba(70,140,255,0.3));animation:bubbleHueEdge 10s linear infinite,bubbleDrift 7.2s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.glass-edge::before{animation:none}}
+@media (max-width:480px){.glass-edge::before{opacity:0.42}}
+@media (pointer:coarse){.glass-edge::before{display:none}
+  .glass-edge{box-shadow:0 0 calc(var(--neon-near,0) * 26px) rgba(157,77,255,calc(var(--neon-near,0) * 0.4)),inset 0 0 0 1px rgba(255,255,255,0.1)}}
+.glass-edge::after{content:'';position:absolute;inset:-1.5px;border-radius:inherit;padding:1.5px;pointer-events:none;z-index:5;background:conic-gradient(from 90deg,transparent 0%,rgba(140,255,230,0.55) 8%,transparent 18%,transparent 40%,rgba(120,190,255,0.5) 48%,transparent 58%,transparent 80%,rgba(255,180,220,0.5) 88%,transparent 98%);background-size:260% 260%;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;filter:blur(1px);animation:causticDrift 5.5s linear infinite;transition:opacity 0.4s var(--ease);will-change:opacity,background-position}
+@keyframes causticDrift{0%{background-position:0% 0%}100%{background-position:260% 130%}}
+body.ripple-active .glass-edge::after{opacity:0.55;animation-duration:2.2s}
+@media (prefers-reduced-motion:reduce){.glass-edge::after{display:none}}
+@media (max-width:480px){.glass-edge::after{filter:none;opacity:0}
+  body.ripple-active .glass-edge::after{opacity:0.4}}
+@media (pointer:coarse){.glass-edge::after{display:none}}
+@media (prefers-reduced-motion:reduce){.glass-bubble::before,.glass-edge::before{opacity:0.55 !important}}
+/* ===== ШАПКА Хаба: интеграция эффектов Invent Bot (без «саги») ===== */
+
+/* — значок: пружина пишет translate/rotate/scale, transform свободен для параллакса и :active — */
+.brand-mark{touch-action:none;transition:transform .3s var(--spring),box-shadow .4s var(--ease);animation:markShadowBreathe 4.4s ease-in-out infinite}
+.brand-mark:active{transform:scale(.92) translateZ(0)}
+.brand-mark.mark-hover-flash{animation:markShadowBreathe 4.4s ease-in-out infinite}   /* сквош при наведении теперь делает пружина */
+.brand-logo-container{animation:markBreatheC 4.4s ease-in-out infinite}
+@keyframes markBreatheC{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+@keyframes markShadowBreathe{
+  0%,100%{box-shadow:0 4px 0 var(--vv-lip-p),0 16px 28px -6px var(--purple-glow),inset 0 2px 3px rgba(255,255,255,.7)}
+  50%{box-shadow:0 4px 0 var(--vv-lip-p),0 20px 34px -6px var(--purple-glow),inset 0 2px 3px rgba(255,255,255,.78)}
+}
+/* клик по значку — широкий блик + световая «линейка» поверх стекла (как у бота) */
+.brand-mark.mark-pulse .mark-sheen::before{animation:markSheenActiveWide .68s cubic-bezier(.3,0,.2,1) 1}
+.brand-mark.mark-pulse .mark-sheen::after{animation:markSheenActiveLine .68s cubic-bezier(.3,0,.2,1) 1}
+@media (prefers-reduced-motion:reduce){
+  .brand-mark,.brand-mark.mark-hover-flash,.brand-logo-container{animation:none}
+  .brand-mark.mark-pulse .mark-sheen::before,.brand-mark.mark-pulse .mark-sheen::after{animation:none}
+}
+
+/* — кнопки RU / ?: пружина не должна «мазать» translate/rotate/scale transition-ом — */
+.icon-btn,.lang-switch{
+  transition:transform .3s var(--spring),box-shadow .3s var(--spring),background-color .3s var(--spring),
+    border-color .3s var(--spring),color .3s var(--spring),opacity .3s var(--spring)}
+
+/* — нижний «отсвет» кнопок шапки (как в боте) — */
+.icon-btn,.lang-switch{--light-near:.4}
+.icon-btn::after,.lang-switch::after{content:'';position:absolute;inset:auto 15% -1px 15%;height:35%;pointer-events:none;border-radius:0 0 999px 999px;
+  background:radial-gradient(120% 100% at 50% 130%,rgba(157,77,255,calc(var(--light-near,.4) * .22)),transparent 70%);opacity:calc(var(--light-near,.4));mix-blend-mode:screen}
+@media (max-width:480px){.icon-btn,.lang-switch{backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%)}}
+
+/* — подпись и имя: плавность, как в боте — */
+.brand-mark:focus-visible{outline:2px solid #cfa8ff;outline-offset:3px}
+</style>
 <style id="uz-velvet">
 /* ============================================================
    «БАРХАТ» для Uzum Хаб — та же система материалов, что в СЛА:
@@ -478,7 +573,7 @@ body{font-family:var(--f-text);font-optical-sizing:auto;font-kerning:normal;lett
 .hero-sub,.hint-text,.tg-note-text,.sheet-legal-content,.offline-text{font-family:var(--f-text)}
 
 /* ---------- 1. ШАПКА ---------- */
-.brand-name{font-weight:800;font-size:19.5px;letter-spacing:-.045em;-webkit-text-stroke:0}
+.brand-name{font-weight:800;font-size:20px;letter-spacing:-.045em;-webkit-text-stroke:0}
 .brand-sub{font-weight:800;letter-spacing:.22em;font-size:9.5px}
 .brand-mark{font-family:var(--f-disp);font-weight:800;box-shadow:0 4px 0 var(--vv-lip-p),0 16px 28px -6px var(--purple-glow),inset 0 2px 3px rgba(255,255,255,.7);margin-bottom:4px}
 @keyframes markIdleBreathe{
@@ -677,22 +772,25 @@ body{font-family:var(--f-text);font-optical-sizing:auto;font-kerning:normal;lett
             <span class="glow-ray" style="--ray-angle:25deg;--ray-len:48%;--ray-w:2px;--ray-op:0.5;--ray-dur:4.3s;--ray-delay:-3.9s;--ray-blur:2.6px"></span>
             <span class="glow-ray" style="--ray-angle:50deg;--ray-len:38%;--ray-w:1.5px;--ray-op:0.32;--ray-dur:4s;--ray-delay:-1.5s;--ray-blur:2.2px"></span>
           </div>
-          <div class="brand-mark" id="brand-mark" aria-label="Uzum">
+          <div class="brand-mark glass-bubble glass-bubble--glow" id="brand-mark" role="button" tabindex="0" aria-label="Uzum">
             <span class="mark-letter">U</span>
             <span class="mark-sheen" aria-hidden="true"></span>
             <span class="mark-gleam" aria-hidden="true"></span>
           </div>
         </div>
         <div class="brand-text">
-          <div class="brand-name" data-i18n="brand_name">Uzum Хаб</div>
+          <div class="brand-drip-wrap">
+            <div class="brand-name" data-i18n="brand_name">Uzum Хаб</div>
+            <span class="brand-drip d1" aria-hidden="true"></span><span class="brand-drip d2" aria-hidden="true"></span><span class="brand-drip d3" aria-hidden="true"></span><span class="brand-drip d4" aria-hidden="true"></span><span class="brand-drip d5" aria-hidden="true"></span>
+          </div>
           <div class="brand-sub" data-i18n="brand_sub">Меню экосистемы ПВЗ</div>
         </div>
       </div>
       <div class="topbar-actions">
-        <button class="lang-switch parallax-el" id="btn-lang" type="button" data-depth="0.18" data-i18n-aria="aria_lang" aria-label="Сменить язык">
+        <button class="lang-switch glass-edge parallax-el" id="btn-lang" type="button" data-depth="0.18" data-i18n-aria="aria_lang" aria-label="Сменить язык">
           <span class="lang-globe">🌐</span><span class="lang-cur" id="lang-cur">RU</span>
         </button>
-        <button class="icon-btn parallax-el" id="btn-info" type="button" data-depth="0.22" data-i18n-aria="aria_info" aria-label="Справка">?</button>
+        <button class="icon-btn glass-edge parallax-el" id="btn-info" type="button" data-depth="0.22" data-i18n-aria="aria_info" aria-label="Справка">?</button>
       </div>
     </div>
 
@@ -1628,6 +1726,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
       var tiltFactorX = PARALLAX_AMP ? Math.max(-1, Math.min(1, (tx / PARALLAX_AMP) * 2.4)) : 0;
       var tiltFactorY = PARALLAX_AMP ? Math.max(-1, Math.min(1, (ty / PARALLAX_AMP) * 2.4)) : 0;
       var MAX_TILT_DEG = 20;
+      var rayRing = $('brand-glow-ring'); if (rayRing) rayRing.style.setProperty('--ray-tilt', (tiltFactorX * 10).toFixed(2) + 'deg');
 
       parallaxPlainEls.forEach(function(el){
         var depth = parseFloat(el.dataset.depth || '0.15');
@@ -1905,6 +2004,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
         if (dict[k] !== undefined) el.setAttribute('aria-label', dict[k]);
       });
       if (dict.page_title) document.title = dict.page_title;
+      window.dispatchEvent(new CustomEvent('uzum:relayout'));
       document.documentElement.setAttribute('lang', code === 'uz' ? 'uz' : 'ru');
       var offlineTextEl = $('offline-text');
       if (offlineTextEl && dict.offline_msg) offlineTextEl.textContent = dict.offline_msg;
@@ -2195,6 +2295,144 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
       el.removeEventListener('animationend', onEnd);
     });
   });
+})();
+</script>
+<script>
+/* ===== ШАПКА Хаба: пружина, капли, клик-блик (порт эффектов Invent Bot, без «саги») ===== */
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var RM = false, INDIV = false;
+  try { RM = !!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches); } catch(e){}
+  try { INDIV = !!(window.CSS && CSS.supports && CSS.supports('translate','1px') && CSS.supports('rotate','1deg') && CSS.supports('scale','1')); } catch(e){}
+
+  /* ---------- 1. Эластичная пружина (squash & stretch) — та же физика, что в боте ---------- */
+  function makeSpring(btn, o){
+    if (!btn || RM) return;
+    o = o || {};
+    var STIFF = o.stiffness || 320, DAMP = o.damping || 6, MASS = 1, STRETCH = o.stretch == null ? .95 : o.stretch,
+        FLICK = o.flickBoost || 1.35, MAX_PULL = o.maxPull || 34;
+    var w = 0, h = 0, ox = 0, oy = 0, vx = 0, vy = 0, tox = 0, toy = 0, dragging = false, pid = null, raf = null, lastT = 0;
+    var histX = [], histY = [], lastHX = null, lastHY = null, sx0 = 0, sy0 = 0, lastMove = 0, watchdog = null;
+
+    function measure(){ var r = btn.getBoundingClientRect(); w = r.width || 1; h = r.height || 1; }
+    measure(); window.addEventListener('resize', measure);
+
+    function apply(ox, oy, rot, scx, scy, glow){
+      if (INDIV) {
+        btn.style.translate = ox.toFixed(1) + 'px ' + oy.toFixed(1) + 'px';
+        btn.style.rotate = rot.toFixed(1) + 'deg';
+        btn.style.scale = scx.toFixed(3) + ' ' + scy.toFixed(3);
+      } else {
+        btn.style.transform = 'translate(' + ox.toFixed(1) + 'px,' + oy.toFixed(1) + 'px) rotate(' + rot.toFixed(1) + 'deg) scale(' + scx.toFixed(3) + ',' + scy.toFixed(3) + ')';
+      }
+      btn.style.filter = glow > .02 ? 'brightness(' + (1 + glow).toFixed(2) + ')' : '';
+    }
+    function clear(){
+      if (INDIV) { btn.style.translate = ''; btn.style.rotate = ''; btn.style.scale = ''; }
+      else btn.style.transform = '';
+      btn.style.filter = '';
+    }
+    function tick(now){
+      if (!lastT) lastT = now;
+      var dt = Math.min((now - lastT) / 1000, 1/30); lastT = now;
+      btn.classList.add('elastic-live');
+      var ax = (-STIFF * (ox - tox) - DAMP * vx) / MASS, ay = (-STIFF * (oy - toy) - DAMP * vy) / MASS;
+      vx += ax * dt; vy += ay * dt; ox += vx * dt; oy += vy * dt;
+      var speed = Math.hypot(vx, vy), pull = Math.min(1, Math.hypot(ox, oy) / MAX_PULL);
+      var stX = 1 + Math.min(.62, (Math.abs(ox) / w + pull * .5) * STRETCH + speed / 1700);
+      var stY = 1 + Math.min(.62, (Math.abs(oy) / h + pull * .5) * STRETCH + speed / 1700);
+      var sqX = 1 - Math.min(.38, (Math.abs(oy) / h + pull * .35) * STRETCH * .45);
+      var sqY = 1 - Math.min(.38, (Math.abs(ox) / w + pull * .35) * STRETCH * .45);
+      var rot = Math.max(-9, Math.min(9, ox * .22));
+      apply(ox, oy, rot, stX * sqX, stY * sqY, Math.min(.35, speed / 2600));
+      var settled = !dragging && speed < 2 && Math.abs(ox - tox) < .15 && Math.abs(oy - toy) < .15;
+      if (settled) { ox = oy = vx = vy = 0; clear(); btn.classList.remove('elastic-live'); raf = null; lastT = 0; return; }
+      raf = requestAnimationFrame(tick);
+    }
+    function clampPull(dx, dy){ var d = Math.hypot(dx, dy); if (d <= MAX_PULL) return {x:dx, y:dy}; var k = MAX_PULL / d; return {x:dx*k, y:dy*k}; }
+    function release(e){
+      if (pid !== null && e && e.pointerId !== pid) return;
+      if (!dragging) return;
+      dragging = false; var p = pid; pid = null; clearTimeout(watchdog);
+      try { if (p !== null) btn.releasePointerCapture(p); } catch(err){}
+      tox = toy = 0;
+      if (histX.length) {
+        var ax = histX.reduce(function(a,b){return a+b;}, 0) / histX.length, ay = histY.reduce(function(a,b){return a+b;}, 0) / histY.length;
+        vx += ax * (FLICK - 1); vy += ay * (FLICK - 1);
+      }
+      histX = []; histY = [];
+      if (!raf) raf = requestAnimationFrame(tick);
+    }
+    btn.addEventListener('pointerdown', function(e){
+      if (e.button) return;
+      dragging = true; pid = e.pointerId; histX = []; histY = []; lastHX = lastHY = null; vx = vy = 0;
+      try { btn.setPointerCapture(pid); } catch(err){}
+      clearTimeout(watchdog);
+      watchdog = setTimeout(function(){ if (dragging) release({pointerId: pid}); }, 3000);
+      measure(); sx0 = e.clientX; sy0 = e.clientY; lastMove = performance.now();
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+    btn.addEventListener('pointermove', function(e){
+      if (!dragging || e.pointerId !== pid) return;
+      var p = clampPull(e.clientX - sx0, e.clientY - sy0); tox = p.x; toy = p.y;
+      var now = performance.now(), dt = now - lastMove; lastMove = now;
+      if (dt > 0 && dt < 100) {
+        histX.push((p.x - (lastHX == null ? p.x : lastHX)) / (dt / 1000));
+        histY.push((p.y - (lastHY == null ? p.y : lastHY)) / (dt / 1000));
+        if (histX.length > 5) { histX.shift(); histY.shift(); }
+      }
+      lastHX = p.x; lastHY = p.y;
+    });
+    btn.addEventListener('pointerup', release);
+    btn.addEventListener('pointercancel', release);
+    btn.addEventListener('lostpointercapture', release);
+    // лёгкое притяжение к курсору при наведении (только мышь/перо)
+    btn.addEventListener('pointerenter', function(e){
+      if (dragging || (e.pointerType && e.pointerType !== 'mouse' && e.pointerType !== 'pen')) return;
+      var r = btn.getBoundingClientRect();
+      tox = ((e.clientX - (r.left + r.width / 2)) / (r.width / 2)) * 6; toy = ((e.clientY - (r.top + r.height / 2)) / (r.height / 2)) * 6;
+      if (!raf) raf = requestAnimationFrame(tick);
+    });
+    btn.addEventListener('pointerleave', function(){ if (dragging) return; tox = toy = 0; if (!raf) raf = requestAnimationFrame(tick); });
+  }
+  makeSpring($('brand-mark'), { stiffness: 460, damping: 17, maxPull: 18, stretch: 1.1, flickBoost: 1.6 });
+  makeSpring($('btn-lang'),   { stiffness: 430, damping: 16, maxPull: 16, stretch: .85, flickBoost: 1.5 });
+  makeSpring($('btn-info'),   { stiffness: 430, damping: 16, maxPull: 14, stretch: .8,  flickBoost: 1.5 });
+
+  /* ---------- 2. Клик по значку: блик-«линейка» по стеклу + активация с клавиатуры ---------- */
+  (function(){
+    var mark = $('brand-mark'); if (!mark) return;
+    var t = null;
+    function pulse(){
+      mark.classList.remove('mark-pulse'); void mark.offsetWidth; mark.classList.add('mark-pulse');
+      clearTimeout(t); t = setTimeout(function(){ mark.classList.remove('mark-pulse'); }, 720);
+    }
+    mark.addEventListener('click', pulse);
+    mark.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); mark.click(); } });
+  })();
+
+  /* ---------- 3. Брендовые капли: стекают от букв названия через весь экран ---------- */
+  (function(){
+    var wrap = document.querySelector('.brand-drip-wrap');
+    if (!wrap || RM) return;
+    // .brand-drip — position:fixed; предок .topbar получает transform (параллакс) и стал бы containing block — выносим капли в body
+    [].slice.call(wrap.querySelectorAll('.brand-drip')).forEach(function(el){ document.body.appendChild(el); });
+    var root = document.documentElement, rafM = 0;
+    function measure(){
+      var r = wrap.getBoundingClientRect();
+      root.style.setProperty('--drip-start-x', (r.left + r.width * .5) + 'px');
+      root.style.setProperty('--drip-start-y', (r.top + r.height * .72) + 'px');
+    }
+    function measureSoon(){ cancelAnimationFrame(rafM); rafM = requestAnimationFrame(measure); }
+    measure();
+    window.addEventListener('resize', measureSoon, { passive: true });
+    window.addEventListener('uzum:relayout', measureSoon);
+    window.addEventListener('load', function(){ measureSoon(); setTimeout(measure, 1800); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureSoon);
+    var tb = document.querySelector('.topbar');
+    if (tb) tb.addEventListener('animationend', measureSoon);
+  })();
 })();
 </script>
 </body>
